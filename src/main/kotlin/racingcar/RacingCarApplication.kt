@@ -5,7 +5,7 @@ import racingcar.domain.Cars
 import racingcar.view.InputView
 import racingcar.view.ResultView
 
-fun main(args: Array<String>){
+fun main() {
     val inputView = InputView()
     val resultView = ResultView()
     val cars = Cars()
@@ -13,7 +13,7 @@ fun main(args: Array<String>){
     cars.carList = carNames!!.map { name -> Car(name) }
     var trial = inputView.getHowManyTrial()
     resultView.showResult()
-    while(trial!! > 0){
+    while (trial!! > 0) {
         cars.moveCars()
         resultView.showEachResults(cars)
         trial--

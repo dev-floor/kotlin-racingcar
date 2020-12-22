@@ -2,7 +2,7 @@ package racingcar.view
 
 import racingcar.domain.Cars
 
-class ResultView{
+class ResultView {
     fun showResult() = println("\n" + "실행 결과")
 
     fun showEachResults(cars: Cars) {
@@ -10,7 +10,7 @@ class ResultView{
         println("")
     }
 
-    fun showFinalResult(winners : List<String>){
+    fun showFinalResult(winners: List<String>) {
         println(winners.joinToString(", ") + "가 최종 우승했습니다.")
     }
 }

@@ -1,16 +1,15 @@
 package racingcar.domain
 
-import java.util.*
+import java.util.Random
 
 const val RANDOM = 10
 
 const val THRESHOLD = 4
 
 class Car(val name: String = "", var position: Position = Position("")) {
-    fun move(){
+    fun move() {
         val random = Random()
-        if(random.nextInt(RANDOM) >= THRESHOLD)
+        if (random.nextInt(RANDOM) >= THRESHOLD)
             position = position.accelerate()
     }
 }
-
