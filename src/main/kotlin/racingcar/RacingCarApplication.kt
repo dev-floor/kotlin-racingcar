@@ -2,19 +2,21 @@ package racingcar
 
 import racingcar.domain.Car
 import racingcar.domain.Cars
-import racingcar.view.View
+import racingcar.view.InputView
+import racingcar.view.ResultView
 
 fun main(args: Array<String>){
-    val view = View()
+    val inputView = InputView()
+    val resultView = ResultView()
     val cars = Cars()
-    val carNames = view.getCarNames()
+    val carNames = inputView.getCarNames()
     cars.carList = carNames!!.map { name -> Car(name) }
-    var trial = view.getHowManyTrial()
-    view.showResult()
+    var trial = inputView.getHowManyTrial()
+    resultView.showResult()
     while(trial!! > 0){
         cars.moveCars()
-        view.showEachResults(cars)
+        resultView.showEachResults(cars)
         trial--
     }
-    view.showFinalResult(cars.getWinnerList())
+    resultView.showFinalResult(cars.getWinnerList())
 }
