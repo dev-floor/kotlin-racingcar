@@ -3,9 +3,9 @@ package racingcar.domain
 import kotlin.streams.toList
 
 class Cars(var carList: List<Car> = emptyList()) {
-    fun moveCars() = carList.forEach() { it.move() }
+    fun moveCars() = carList.forEach() { it.move(Random().getRandomValue()) }
 
-    private fun getWinner(): Car? = carList.maxByOrNull { it.position.position }
+    fun getWinner(): Car? = carList.maxByOrNull { it.position.position }
 
     fun getWinnerList():
         List<String> {

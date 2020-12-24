@@ -1,5 +1,5 @@
 package racingcar.domain
 
-class Position(var position: String) {
+class Position(val position: String) {
     fun accelerate() = Position("$position-")
 }
