@@ -1,8 +1,10 @@
 package racingcar.attempt.domain
 
+const val ATTEMPT_NUMBER_LOWER_BOUND = 1
+
 class Attempt private constructor(private val number: Long) {
     init {
-        require(number > 1)
+        require(number > ATTEMPT_NUMBER_LOWER_BOUND)
     }
 
     companion object {
