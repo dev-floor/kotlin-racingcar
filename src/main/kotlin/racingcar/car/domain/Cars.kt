@@ -1,7 +1,5 @@
 package racingcar.car.domain
 
-import racingcar.view.CAR_NAME_DELIMITER
-
 const val CARS_SIZE_LOWER_BOUND = 1
 
 class Cars private constructor(private val cars: List<Car>) {
@@ -10,10 +8,11 @@ class Cars private constructor(private val cars: List<Car>) {
     }
 
     companion object {
-        fun fromCarNamesInput(carNamesInput: String): Cars {
-            val cars = carNamesInput.split(CAR_NAME_DELIMITER)
-                .map { it.trim() }
+        fun fromCarNames(carNames: List<String>): Cars {
+            val cars = carNames.asSequence()
+                .map { Name(it) }
                 .map { Car(it) }
+                .toList()
 
             return Cars(cars)
         }
