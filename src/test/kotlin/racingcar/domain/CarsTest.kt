@@ -33,4 +33,18 @@ internal class CarsTest {
         // then
         assertThat(cars).isNotNull
     }
+
+    @Test
+    internal fun `NumberGenerator에 따라 모든 자동차를 이동`() {
+        // given
+        val cars = Cars.from(arrayListOf("car1", "car2"))
+        val movableNumberGenerator = MovableNumberGenerator()
+
+        // when
+        cars.moveByNumberGenerator(movableNumberGenerator)
+
+        // then
+        assertThat(cars.cars).extracting("position", Position::class.java)
+            .isEqualTo(listOf(Position(1L), Position(1L)))
+    }
 }

@@ -13,4 +13,10 @@ class Cars(val cars: List<Car>) {
             return Cars(cars)
         }
     }
+
+    fun moveByNumberGenerator(numberGenerator: NumberGenerator) {
+        for (car in cars) {
+            car.move(numberGenerator.generate())
+        }
+    }
 }
