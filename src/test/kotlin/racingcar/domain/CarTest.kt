@@ -2,6 +2,8 @@ package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 
 @Suppress("NonAsciiCharacters")
 internal class CarTest {
@@ -30,5 +32,18 @@ internal class CarTest {
 
         // then
         assertThat(car).isNotNull
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = ["3,0", "4,1"])
+    internal fun `숫자에 따라 위치를 이동시킴`(number: Long, expected: Long) {
+        // given
+        val car = Car.from("hello")
+
+        // when
+        car.move(number)
+
+        // then
+        assertThat(car.position.position).isEqualTo(expected)
     }
 }

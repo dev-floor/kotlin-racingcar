@@ -29,4 +29,17 @@ internal class PositionTest {
         // then
         assertThatIllegalArgumentException().isThrownBy { Position(number) }
     }
+
+    @Test
+    internal fun `위치가 1 증가한 인스턴스 반환`() {
+        // given
+        val number = 3L
+        val position = Position(number)
+
+        // when
+        val actual = position.increase()
+
+        // then
+        assertThat(actual.position).isEqualTo(number + 1)
+    }
 }

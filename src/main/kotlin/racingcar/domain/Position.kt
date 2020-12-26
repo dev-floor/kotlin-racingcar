@@ -8,4 +8,6 @@ data class Position(val position: Long = 0L) {
     companion object {
         private const val POSITION_LOWER_BOUND = 0L
     }
+
+    fun increase() = Position(position + 1)
 }
