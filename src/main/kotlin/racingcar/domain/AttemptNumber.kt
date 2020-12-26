@@ -1,4 +1,4 @@
-package racingcar.attempt.domain
+package racingcar.domain
 
 class AttemptNumber(val number: Long) {
     init {

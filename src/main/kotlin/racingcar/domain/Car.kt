@@ -1,4 +1,4 @@
-package racingcar.car.domain
+package racingcar.domain
 
 class Car(val name: Name) {
     companion object {

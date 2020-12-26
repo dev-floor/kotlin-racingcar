@@ -1,4 +1,4 @@
-package racingcar.car.domain
+package racingcar.domain
 
 data class Name(val name: String) {
     init {
