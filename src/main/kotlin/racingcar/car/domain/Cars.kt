@@ -1,19 +1,15 @@
 package racingcar.car.domain
 
-const val CARS_SIZE_LOWER_BOUND = 1
-
-class Cars private constructor(private val cars: List<Car>) {
+class Cars(val cars: List<Car>) {
     init {
-        require(cars.size > CARS_SIZE_LOWER_BOUND)
+        require(cars.size > CARS_SIZE_LOWER_BOUND) { "자동차는 1대 이상 존재해야 합니다." }
     }
 
     companion object {
-        fun fromCarNames(carNames: List<String>): Cars {
-            val cars = carNames.asSequence()
-                .map { Name(it) }
-                .map { Car(it) }
-                .toList()
+        private const val CARS_SIZE_LOWER_BOUND = 1
 
+        fun from(carNames: List<String>): Cars {
+            val cars = carNames.map { Car.from(it) }
             return Cars(cars)
         }
     }
