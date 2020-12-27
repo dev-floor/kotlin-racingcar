@@ -24,6 +24,9 @@ class Cars(val cars: List<Car>) {
         }
     }
 
-    fun moveByNumberGenerator(numberGenerator: NumberGenerator) =
+    fun moveByNumberGenerator(numberGenerator: NumberGenerator): List<Report> {
         cars.forEach { it.move(numberGenerator.generate()) }
+        return cars.map { Report.of(it.name, it.position) }
+    }
 }
+

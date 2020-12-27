@@ -51,10 +51,10 @@ internal class CarsTest {
         val movableNumberGenerator = MovableNumberGenerator()
 
         // when
-        cars.moveByNumberGenerator(movableNumberGenerator)
+        val reports = cars.moveByNumberGenerator(movableNumberGenerator)
 
         // then
-        assertThat(cars.cars).extracting("position", Position::class.java)
-            .isEqualTo(listOf(Position(1L), Position(1L)))
+        assertThat(reports).extracting("position", Long::class.java)
+            .isEqualTo(listOf(1L, 1L))
     }
 }
