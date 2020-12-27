@@ -11,8 +11,8 @@ class Car(val name: Name, position: Position = Position()) {
     }
 
     fun move(number: Long) {
-        if (number >= MOVABLE_LOWER_BOUND) {
-            position.increase().also { position = it }
+        when {
+            number >= MOVABLE_LOWER_BOUND -> position = position.increase()
         }
     }
 }

@@ -1,6 +1,7 @@
 package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 import org.junit.jupiter.api.Test
 
 @Suppress("NonAsciiCharacters")
@@ -19,6 +20,15 @@ internal class CarsTest {
             assertThat(it).isNotNull
             assertThat(it.cars).hasSize(2)
         }
+    }
+
+    @Test
+    internal fun `유효하지 않은 자동차 개수일 경우 예외 발생`() {
+        // given
+        val empty = emptyList<Car>()
+
+        // then
+        assertThatIllegalArgumentException().isThrownBy { Cars(empty) }
     }
 
     @Test

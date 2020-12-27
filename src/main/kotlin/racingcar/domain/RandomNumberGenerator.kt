@@ -8,7 +8,5 @@ class RandomNumberGenerator : NumberGenerator {
         const val EXCLUSIVE_UPPER_BOUND = 10L
     }
 
-    override fun generate(): Long {
-        return Random.nextLong(INCLUSIVE_LOWER_BOUND, EXCLUSIVE_UPPER_BOUND)
-    }
+    override fun generate() = Random.nextLong(INCLUSIVE_LOWER_BOUND, EXCLUSIVE_UPPER_BOUND)
 }
