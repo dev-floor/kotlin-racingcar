@@ -1,4 +1,4 @@
-package racingcar.view
+package racingcar.ui
 
 const val CARS_NAME_DELIMITER = ","
 
@@ -8,7 +8,7 @@ fun inputCarNames(): List<String> {
         .map(String::trim)
 }
 
-fun inputAttempt(): String? {
+fun inputAttemptNumber(): String {
     println("시도할 횟수는 몇 회인가요?")
-    return readLine()
+    return readLine()!!
 }
