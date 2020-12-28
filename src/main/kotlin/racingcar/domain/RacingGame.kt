@@ -15,4 +15,5 @@ class RacingGame(private val cars: Cars, private val attemptNumber: AttemptNumbe
         }
         return reports
     }
+
 }
