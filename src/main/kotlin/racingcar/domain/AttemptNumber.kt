@@ -7,7 +7,7 @@ class AttemptNumber(number: Long) {
     val isPresent
         get() = number != 0L
 
-    val attemptCountSoFar
+    val attemptNumberSoFar
         get() = initialAttemptNumber - number
 
     private val initialAttemptNumber = number

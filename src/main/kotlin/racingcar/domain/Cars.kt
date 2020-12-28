@@ -1,14 +1,13 @@
 package racingcar.domain
 
 class Cars(val cars: List<Car>) {
-    val winner: List<Car>
+    val winners: List<Car>
         get() {
             val winningPosition = cars.maxByOrNull { it.position }
                 ?.position
                 ?: throw AssertionError()
 
             return cars.filter { it.position == winningPosition }
-                .toList()
         }
 
     init {

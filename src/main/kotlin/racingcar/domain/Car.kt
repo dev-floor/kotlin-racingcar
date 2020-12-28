@@ -1,7 +1,7 @@
 package racingcar.domain
 
-class Car(val name: Name, position: Position = Position()) {
-    var position: Position = position
+class Car(val name: Name, position: Position = Position.valueOf(Position.MIN_POSITION)) {
+    var position = position
         private set
 
     fun move(number: Long) {

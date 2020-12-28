@@ -12,7 +12,7 @@ internal class PositionTest {
         val number = 2L
 
         // when
-        val position = Position(number)
+        val position = Position.valueOf(number)
 
         // then
         assertThat(position).satisfies {
@@ -27,14 +27,14 @@ internal class PositionTest {
         val number = -1L
 
         // then
-        assertThatIllegalArgumentException().isThrownBy { Position(number) }
+        assertThatIllegalArgumentException().isThrownBy { Position.valueOf(number) }
     }
 
     @Test
     internal fun `위치가 1 증가한 인스턴스 반환`() {
         // given
         val number = 3L
-        val position = Position(number)
+        val position = Position.valueOf(number)
 
         // when
         val actual = position.increase()
