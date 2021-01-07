@@ -2,15 +2,20 @@ package racingcar.view
 
 import racingcar.domain.Cars
 
-class ResultView {
-    fun showResult() = println("\n" + "실행 결과")
+const val POSITION_DELIMITER = "-"
 
-    fun showEachResults(cars: Cars) {
-        cars.carList.forEach { println(it.name + " : " + it.position.position) }
-        println("")
-    }
+fun showResult() = println("\n실행 결과")
 
-    fun showFinalResult(winners: List<String>) {
-        println(winners.joinToString(", ") + "가 최종 우승했습니다.")
+fun showEachResults(cars: Cars) {
+    cars.cars.forEach {
+        print("${it.name} : ")
+        for (i in 1..it.position.position)
+            print(POSITION_DELIMITER)
+        println()
     }
+    println()
+}
+
+fun showFinalResult(winners: List<String>) {
+    println("${winners.joinToString()}가 최종 우승했습니다.")
 }

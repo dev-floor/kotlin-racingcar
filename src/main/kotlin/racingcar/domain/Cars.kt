@@ -1,18 +1,12 @@
 package racingcar.domain
 
-import kotlin.streams.toList
-
-class Cars(var carList: List<Car> = emptyList()) {
-    fun moveCars() = carList.forEach() { it.move(Random().getRandomValue()) }
-
-    fun getWinner(): Car? = carList.maxByOrNull { it.position.position }
-
-    fun getWinnerList():
-        List<String> {
-            val winner = this.getWinner()
-            return carList.stream()
-                .filter { it.position.position == winner!!.position.position }
+class Cars(var cars: List<Car>) {
+    val winners: List<String>
+        get() {
+            return cars.filter { it -> it.position.position == cars.maxByOrNull { it.position.position }!!.position.position }
                 .map { it.name }
                 .toList()
         }
+
+    fun moveCars() = cars.forEach() { it.move(RandomNumber().getRandomValue()) }
 }

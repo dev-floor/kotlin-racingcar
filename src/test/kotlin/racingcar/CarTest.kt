@@ -1,12 +1,13 @@
 package racingcar
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 import org.junit.jupiter.api.Test
 import racingcar.domain.Car
 
-class Car {
+class CarTest {
 
-    private val car = Car()
+    private val car = Car("car")
 
     @Test
     fun `Car should move when random value is threshold or over`() {
@@ -20,5 +21,10 @@ class Car {
         val prevPosition = car.position
         car.move(3)
         assertThat(car.position).isEqualTo(prevPosition)
+    }
+
+    @Test
+    fun `Should fail when name length over 5`() {
+        assertThatIllegalArgumentException().isThrownBy { Car("123456") }
     }
 }
