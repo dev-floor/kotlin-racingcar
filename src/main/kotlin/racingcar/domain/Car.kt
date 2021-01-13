@@ -2,7 +2,7 @@ package racingcar.domain
 
 class Car(val name: String, var position: Position = Position()) {
     init {
-        require(name.length <= NAME_THRESHOLD) { "자동차 이름은 5자 이하만 가능합니다." }
+        require(name.length <= NAME_MAX_LENGTH) { "자동차 이름은 5자 이하만 가능합니다." }
     }
 
     fun move(number: Int) {
@@ -12,6 +12,6 @@ class Car(val name: String, var position: Position = Position()) {
 
     companion object {
         const val MOVE_THRESHOLD = 4
-        const val NAME_THRESHOLD = 5
+        const val NAME_MAX_LENGTH = 5
     }
 }

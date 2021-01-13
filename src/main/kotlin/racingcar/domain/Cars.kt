@@ -1,9 +1,11 @@
 package racingcar.domain
 
-class Cars(var cars: List<Car>) {
+class Cars(val cars: List<Car>) {
     val winners: List<String>
         get() {
-            return cars.filter { it -> it.position.position == cars.maxByOrNull { it.position.position }!!.position.position }
+            val winningPosition = cars.maxByOrNull { it.position.position }!!.position.position
+
+            return cars.filter { it.position.position == winningPosition }
                 .map { it.name }
                 .toList()
         }

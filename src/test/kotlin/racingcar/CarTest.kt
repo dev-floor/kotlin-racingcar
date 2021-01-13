@@ -27,4 +27,17 @@ class CarTest {
     fun `Should fail when name length over 5`() {
         assertThatIllegalArgumentException().isThrownBy { Car("123456") }
     }
+
+    @Test
+    fun `Each car should move properly`() {
+        val carA = Car("carA")
+        val carB = Car("carB")
+        val carC = Car("carC")
+        carA.move(4)
+        carA.move(4)
+        carB.move(4)
+        assertThat(carA.position.position).isEqualTo(2)
+        assertThat(carB.position.position).isEqualTo(1)
+        assertThat(carC.position.position).isEqualTo(0)
+    }
 }
