@@ -6,12 +6,12 @@ class Car(val name: String, var position: Position = Position()) {
     }
 
     fun move(number: Int) {
-        if (number >= MOVE_THRESHOLD)
+        if (number >= MOVABLE_LOWER_BOUND)
             position = position.accelerate()
     }
 
     companion object {
-        const val MOVE_THRESHOLD = 4
+        const val MOVABLE_LOWER_BOUND = 4
         const val NAME_MAX_LENGTH = 5
     }
 }

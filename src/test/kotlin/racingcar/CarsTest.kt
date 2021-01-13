@@ -14,4 +14,14 @@ class CarsTest() {
         cars.cars[1].move(4)
         assertThat(cars.winners.count()).isEqualTo(2)
     }
+
+    @Test
+    fun `Car should move when random value is threshold or over`() {
+        val cars = Cars(listOf(Car("carA"), Car("carB"), Car("carC")))
+        val movableNumber = MovableNumberGenerator()
+
+        cars.moveCars(movableNumber)
+        cars.cars.forEach() { assertThat(it.position.position).isEqualTo(1) }
+        assertThat(cars.winners.count()).isEqualTo(3)
+    }
 }

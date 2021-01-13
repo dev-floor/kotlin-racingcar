@@ -10,5 +10,7 @@ class Cars(val cars: List<Car>) {
                 .toList()
         }
 
-    fun moveCars() = cars.forEach() { it.move(RandomNumber().getRandomValue()) }
+    fun moveCars(numberGenerator: NumberGenerator) {
+        cars.forEach() { it.move(numberGenerator.generate()) }
+    }
 }

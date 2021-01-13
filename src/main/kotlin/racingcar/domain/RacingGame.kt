@@ -7,9 +7,9 @@ class RacingGame(private val trialNumber: Int) {
         require(trialNumber > 0)
     }
 
-    fun startGame(cars: Cars): Cars {
+    fun startGame(cars: Cars, numberGenerator: NumberGenerator): Cars {
         for (i in 1..trialNumber) {
-            cars.moveCars()
+            cars.moveCars(numberGenerator)
             showEachResults(cars)
         }
         return cars
