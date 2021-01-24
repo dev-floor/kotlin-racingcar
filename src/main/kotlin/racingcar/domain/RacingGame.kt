@@ -5,13 +5,10 @@ class RacingGame(private val trialNumber: Int) {
         require(trialNumber > 0)
     }
 
-    fun startGame(cars: Cars, numberGenerator: NumberGenerator): Report {
-        val report = Report()
-
-        for (i in 1..trialNumber) {
+    fun startGame(cars: Cars, numberGenerator: NumberGenerator, report: Report) {
+        for (round in 1..trialNumber) {
             cars.moveCars(numberGenerator)
-            report.roundReport(cars)
+            report.report(round, cars)
         }
-        return report
     }
 }

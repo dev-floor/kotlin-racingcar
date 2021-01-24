@@ -9,5 +9,5 @@ fun getCarNames(): List<String> {
 
 fun getTrialNumber(): Int? {
     println("\n시도할 횟수는 몇 회인가요?")
-    return readLine()?.toInt()
+    return readLine()!!.toInt()
 }
