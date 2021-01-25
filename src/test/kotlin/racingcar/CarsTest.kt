@@ -8,7 +8,7 @@ import racingcar.domain.Cars
 class CarsTest() {
 
     @Test
-    fun `Should get the most moved cars when we want to get winner list`() {
+    fun `Should get the most moved cars when wanting to get winner list`() {
         val cars = Cars(listOf(Car("carA"), Car("carB"), Car("carC")))
         cars.cars[0].move(4)
         cars.cars[1].move(4)
