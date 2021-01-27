@@ -7,7 +7,7 @@ fun getCarNames(): List<String> {
     return readLine()!!.split(CAR_DELIMITER)
 }
 
-fun getTrialNumber(): Int? {
+fun getTrialNumber(): Int {
     println("\n시도할 횟수는 몇 회인가요?")
     return readLine()!!.toInt()
 }
