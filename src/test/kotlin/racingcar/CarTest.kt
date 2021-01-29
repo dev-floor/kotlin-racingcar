@@ -10,14 +10,14 @@ class CarTest {
     private val car = Car("car")
 
     @Test
-    fun `Car should move when random value is threshold or over`() {
+    fun `Should move car when random value is threshold or over`() {
         val prevPosition = car.position
         car.move(4)
         assertThat(car.position).isNotEqualTo(prevPosition)
     }
 
     @Test
-    fun `Car should not move when random value is below threshold`() {
+    fun `Should not move car when random value is below threshold`() {
         val prevPosition = car.position
         car.move(3)
         assertThat(car.position).isEqualTo(prevPosition)
@@ -29,7 +29,7 @@ class CarTest {
     }
 
     @Test
-    fun `Each car should move properly`() {
+    fun `Should move each car properly`() {
         val carA = Car("carA")
         val carB = Car("carB")
         val carC = Car("carC")

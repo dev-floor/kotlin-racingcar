@@ -16,7 +16,7 @@ class CarsTest {
     }
 
     @Test
-    fun `Car should move when random value is threshold or over`() {
+    fun `Should move car when random value is threshold or over`() {
         val cars = Cars(listOf(Car("carA"), Car("carB"), Car("carC")))
         val movableNumber = MovableNumberGenerator()
 
