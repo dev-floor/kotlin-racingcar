@@ -1,6 +1,6 @@
 package racingcar.domain
 
-class Cars(val cars: List<Car>) {
+class Cars(val cars: List<Car> = listOf()) {
     val winners: List<Car>
         get() {
             val winningPosition = cars.maxByOrNull { it.position.position }!!.position.position
