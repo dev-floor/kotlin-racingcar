@@ -1,12 +1,9 @@
 package racingcar.domain
 
-class RacingGame(private val trialNumber: Int) {
-    init {
-        require(trialNumber > 0)
-    }
+class RacingGame(private val trialNumber: Trial, private val cars: Cars) {
 
-    fun startGame(cars: Cars, numberGenerator: NumberGenerator, report: Report) {
-        for (round in 1..trialNumber) {
+    fun startGame(numberGenerator: NumberGenerator, report: Report) {
+        for (round in 1..trialNumber.trialNumber) {
             cars.moveCars(numberGenerator)
             report.report(round, cars)
         }

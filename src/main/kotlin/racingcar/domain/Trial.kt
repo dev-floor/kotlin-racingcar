@@ -1,11 +1,11 @@
 package racingcar.domain
 
-class Trial(val trialNumber: Int) {
-    init{
-        require(trialNumber > TRIAL_LOWER_BOUND) { "최소 1회 이상 시도 가능합니다." }
+data class Trial(val trialNumber: Int) {
+    init {
+        require(trialNumber > TRIAL_LOWER_BOUND) { "시도 횟수는 최소 1회 이상 가능합니다." }
     }
 
-    companion object{
+    companion object {
         const val TRIAL_LOWER_BOUND = 0
     }
 }
