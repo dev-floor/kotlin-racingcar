@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import racingcar.domain.Car
 import racingcar.domain.Cars
 
-class CarsTest() {
+class CarsTest {
 
     @Test
     fun `Should get the most moved cars when wanting to get winner list`() {

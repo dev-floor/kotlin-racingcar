@@ -1,7 +1,7 @@
 package racingcar
 
 import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.Assertions.assertThatIllegalArgumentException
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import racingcar.domain.Car
 
@@ -25,7 +25,7 @@ class CarTest {
 
     @Test
     fun `Should fail when name length over 5`() {
-        assertThatIllegalArgumentException().isThrownBy { Car("123456") }
+        assertThatThrownBy { Car("123456") }
     }
 
     @Test
